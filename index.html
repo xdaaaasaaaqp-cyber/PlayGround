@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+  <meta name="theme-color" content="#101a25" />
+  <title>Block City: Admin Mayhem</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div id="game-root"></div>
+  <div class="vignette"></div>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="Block City"><span class="brand-mark">▦</span><span>BLOCK<span class="brand-light">CITY</span><small>ADMIN MAYHEM</small></span></a>
+    <div class="top-stats">
+      <div class="stat-chip"><span class="live-dot"></span><span id="citizen-count">08</span><small>CITIZENS</small></div>
+      <div class="stat-chip chaos-chip"><span class="bolt">ϟ</span><span id="chaos-score">000</span><small>CHAOS</small></div>
+    </div>
+    <button class="sound-button" id="sound-toggle" aria-label="Toggle sound">♫ <span>SOUND ON</span></button>
+  </header>
+  <main class="hud">
+    <section class="mission-card glass">
+      <div class="eyebrow"><span class="eyebrow-line"></span> YOUR CITY. YOUR RULES.</div>
+      <h1>Build it.<br/><em>Break it.</em></h1>
+      <p>You’re the only admin in Block City. The citizens have no idea what’s coming.</p>
+      <div class="mission-progress"><div><span>CHAOS METER</span><b id="meter-label">JUST GETTING STARTED</b></div><div class="meter-track"><i id="chaos-meter"></i></div></div>
+      <button class="primary-button" id="open-admin"><span class="button-icon">⚡</span> OPEN ADMIN PANEL <span class="button-arrow">↗</span></button>
+      <div class="admin-note"><span class="lock-icon">▣</span> ADMIN ACCESS <b>GRANTED</b><span class="admin-only">ONLY YOU</span></div>
+    </section>
+    <div class="world-label"><span class="crosshair">⌖</span><span id="location-label">DOWNTOWN DISTRICT</span><small>BLOCK CITY • SECTOR 01</small></div>
+    <section class="citizen-toast glass" id="citizen-toast"><span class="toast-icon">☻</span><div><b id="toast-name">MILO</b><span id="toast-message">Just enjoying the sunshine.</span></div><i class="toast-status"></i></section>
+    <div class="bottom-hud"><div class="objective glass"><span class="objective-icon">✦</span><div><small>FREE PLAY</small><b id="objective-text">Make some noise out there</b></div></div><div class="controls-hint"><kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd><span>MOVE</span><kbd class="space-key">SPACE</kbd><span>JUMP</span></div></div>
+  </main>
+  <section class="admin-panel glass" id="admin-panel" aria-hidden="true">
+    <div class="panel-top"><div><div class="eyebrow"><span class="eyebrow-line"></span> ROOT ACCESS <span class="secure-dot"></span></div><h2>Admin <em>panel</em></h2></div><button class="close-panel" id="close-admin" aria-label="Close admin panel">×</button></div>
+    <p class="panel-subtitle">One city. Unlimited bad ideas.</p>
+    <div class="power-list">
+      <button class="power-card" data-power="meteor"><span class="power-art meteor-art">☄</span><span class="power-copy"><b>METEOR SHOWER</b><small>Rain blocks from the sky</small></span><span class="power-cost">DROP <b>↗</b></span></button>
+      <button class="power-card" data-power="quake"><span class="power-art quake-art">▥</span><span class="power-copy"><b>EARTHQUAKE</b><small>Rattle the whole district</small></span><span class="power-cost">SHAKE <b>↗</b></span></button>
+      <button class="power-card" data-power="tornado"><span class="power-art tornado-art">◉</span><span class="power-copy"><b>BLOCKNADO</b><small>Send citizens spinning</small></span><span class="power-cost">SPIN <b>↗</b></span></button>
+      <button class="power-card" data-power="party"><span class="power-art party-art">✳</span><span class="power-copy"><b>GRAVITY OFF</b><small>Everybody float for a bit</small></span><span class="power-cost">FLOAT <b>↗</b></span></button>
+    </div>
+    <div class="panel-footer"><span><i class="secure-dot"></i> PRIVATE ADMIN CHANNEL</span><span>v.01.08</span></div>
+  </section>
+  <div class="event-banner" id="event-banner"><span class="event-symbol">ϟ</span><span id="event-message">MAYHEM UNLEASHED</span><div class="event-line"></div></div>
+  <div class="toast-stack" id="toast-stack" aria-live="polite"></div>
+  <div class="mobile-controls" id="mobile-controls"><div class="joystick" id="joystick"><div class="joy-knob" id="joy-knob"></div></div><button class="mobile-jump" id="jump-button">↑<small>JUMP</small></button><button class="mobile-admin" id="mobile-admin-button">⚡<small>ADMIN</small></button></div>
+  <div class="loading-overlay" id="loading-overlay"><div class="loading-cube">▦</div><b>BUILDING YOUR CITY</b><span>placing blocks, one at a time…</span></div>
+  <script type="module" src="./game.js"></script>
+</body>
+</html>
